@@ -2,17 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
- <!--  
-	<parent>
-	    <groupId>com.alibaba</groupId>
-	   <artifactId>parent-pom</artifactId>
-	   <version>1.0.0-SNAPSHOT</version>
-	 </parent>
--->
 
-	<groupId>com.alibaba</groupId>
-	<artifactId>fastjson</artifactId>
-	<version>1.2.8-SNAPSHOT</version>
+	<groupId>com.miguelgaeta.android-fast-json</groupId>
+	<artifactId>fast-json</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 	<name>fastjson</name>
@@ -23,9 +16,10 @@
 
 	<properties>
 		<junit.version>4.11</junit.version>
-		<gpg.skip>false</gpg.skip>
-		<javadoc.skip>false</javadoc.skip>
+		<gpg.skip>true</gpg.skip>
+		<javadoc.skip>true</javadoc.skip>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.test.skip>true</maven.test.skip>
 		<jdk.version>1.5</jdk.version>
 	</properties>
 
@@ -43,22 +37,17 @@
 	</developers>
 
 	<scm>
-		<url>https://wenshao@github.com/alibaba/fastjson.git</url>
-		<connection>scm:git:https://wenshao@github.com/alibaba/fastjson.git</connection>
+		<url>https://github.com/mrkcsc/android-fast-json</url>
+		<connection>scm:git:https://mrkcsc@github.com/mrkcsc/android-fast-json.git</connection>
+		<developerConnection>scm:git:https://mrkcsc@github.com/mrkcsc/android-fast-json.git</developerConnection>
 	</scm>
 
-<!-- 
 	<distributionManagement>
 		<repository>
-			<id>opensesame</id>
-			<url>dav:http://code.alibabatech.com/mvn/releases/</url>
+			<id>bintray</id>
+			<url>https://api.bintray.com/maven/mrkcsc/maven/com.miguelgaeta.fast-json</url>
 		</repository>
-		<snapshotRepository>
-			<id>opensesame</id>
-			<url>dav:http://code.alibabatech.com/mvn/snapshots/</url>
-		</snapshotRepository>
 	</distributionManagement>
- -->
  
 	<organization>
 		<name>Alibaba Group</name>
@@ -165,6 +154,16 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<useReleaseProfile>false</useReleaseProfile>
+					<releaseProfiles>release</releaseProfiles>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
