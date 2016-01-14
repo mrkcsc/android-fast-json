@@ -4,7 +4,7 @@
 
 	<groupId>com.miguelgaeta.android-fast-json</groupId>
 	<artifactId>fast-json</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7-SNAPSHOT</version>
 
 	<packaging>jar</packaging>
 	<name>fastjson</name>
@@ -39,7 +39,7 @@
 		<url>https://github.com/mrkcsc/android-fast-json</url>
 		<connection>scm:git:https://github.com/mrkcsc/android-fast-json.git</connection>
 		<developerConnection>scm:git:git@github.com:mrkcsc/android-fast-json.git</developerConnection>
-	  <tag>fast-json-1.0.6</tag>
+	  <tag>1.0.5-SNAPSHOT</tag>
   </scm>
 
 	<distributionManagement>
