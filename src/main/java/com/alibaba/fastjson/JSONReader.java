@@ -40,15 +40,22 @@ public class JSONReader implements Closeable {
         this.parser.config(feature, state);
     }
 
-    public void startObject() {
+    public void startObject(boolean startStructure) {
         if (context == null) {
             context = new JSONStreamContext(null, JSONStreamContext.StartObject);
         } else {
-            startStructure();
+            if (startStructure) {
+                startStructure();
+            }
+
             context = new JSONStreamContext(context, JSONStreamContext.StartObject);
         }
 
         this.parser.accept(JSONToken.LBRACE, JSONToken.IDENTIFIER);
+    }
+
+    public void startObject() {
+        startObject(true);
     }
 
     public void endObject() {
@@ -72,7 +79,11 @@ public class JSONReader implements Closeable {
         endStructure();
     }
 
-    private void startStructure() {
+    public void startStructure() {
+        if (context == null) {
+            return;
+        }
+
         final int state = context.getState();
         switch (state) {
             case PropertyKey:
