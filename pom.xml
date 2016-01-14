@@ -2,18 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
-<!--  
-	<parent>
-	    <groupId>com.alibaba</groupId>
-	   <artifactId>parent-pom</artifactId>
-	   <version>1.0.0-SNAPSHOT</version>
-	 </parent>
--->
-	
-	<groupId>com.alibaba</groupId>
-	<artifactId>fastjson</artifactId>
-	<version>1.2.9-SNAPSHOT</version>
+
+	<groupId>com.miguelgaeta.android-fast-json</groupId>
+	<artifactId>fast-json</artifactId>
+	<version>1.0.6</version>
 
 	<packaging>jar</packaging>
 	<name>fastjson</name>
@@ -44,9 +36,11 @@
 	</developers>
 
 	<scm>
-		<url>https://wenshao@github.com/alibaba/fastjson.git</url>
-		<connection>scm:git:https://wenshao@github.com/alibaba/fastjson.git</connection>
-	</scm>
+		<url>https://github.com/mrkcsc/android-fast-json</url>
+		<connection>scm:git:https://github.com/mrkcsc/android-fast-json.git</connection>
+		<developerConnection>scm:git:git@github.com:mrkcsc/android-fast-json.git</developerConnection>
+	  <tag>fast-json-1.0.6</tag>
+  </scm>
 
 	<repositories>
 		<repository>
