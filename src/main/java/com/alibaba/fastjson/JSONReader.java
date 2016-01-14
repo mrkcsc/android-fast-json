@@ -40,22 +40,27 @@ public class JSONReader implements Closeable {
         this.parser.config(feature, state);
     }
 
-    public void startObject(boolean startStructure) {
+    public boolean startObject() {
         if (context == null) {
             context = new JSONStreamContext(null, JSONStreamContext.StartObject);
         } else {
-            if (startStructure) {
-                startStructure();
-            }
+            startStructure();
 
             context = new JSONStreamContext(context, JSONStreamContext.StartObject);
         }
 
-        this.parser.accept(JSONToken.LBRACE, JSONToken.IDENTIFIER);
-    }
+        if (this.parser.getLexer().token() == JSONToken.NULL) {
+            this.parser.accept(JSONToken.NULL);
 
-    public void startObject() {
-        startObject(true);
+            endStructure();
+
+            return false;
+
+        } else {
+            this.parser.accept(JSONToken.LBRACE, JSONToken.IDENTIFIER);
+
+            return true;
+        }
     }
 
     public void endObject() {
